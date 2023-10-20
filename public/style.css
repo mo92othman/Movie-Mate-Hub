@@ -1,5 +1,5 @@
 :root {
-  --primary-color: #000000;
+  --primary-color: #070412;
   --secondary-color: #414141;
   --secondary-color-light: #6b6b6b;
   --accent-color: #00cc66;
@@ -14,6 +14,10 @@
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+body {
+  background: var(--primary-gradient);
+  align-items: center;
+}
 /* Styling the Welcome page */
 
 .flex-container {
@@ -85,6 +89,93 @@ video {
 .text-container button:hover {
   background-color: var(--secondary-color-light); 
 }
+
+
+/* Styling the Search page */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  background-color: var(--primary-color);
+}
+.header-logo {
+  margin-left: 50px;
+  width: 10vw;
+}
+.log-in-container {
+  width: 400px;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 50px;
+}
+
+.log-in-container img {
+  width: 2.5vw;
+}
+
+.log-in-container button {
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 10px 20px;
+  background-color: var(--accent-color);
+}
+.search-field{
+  display: flex;
+  margin: 15px auto; /* Center the element horizontally */
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+}
+.search-placeholder {
+  display: flex;
+  flex: 2;
+  justify-content: space-between;
+  background-color: var(--secondary-color-light);
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+.search-placeholder input {
+  width: 90%;
+  font-weight: bold;
+  color: white;
+  border: none;
+  background-color: transparent;
+}
+.search-placeholder input::placeholder {
+  color: white;
+}
+.search-placeholder img {
+  height: 5%;
+  width: 5%;
+}
+.search-field button {
+  flex: 1;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 0;
+  margin-left: 1vw;
+  color: white;
+  background-color: var(--secondary-color);
+  transition: background-color 0.3s;
+}
+
+.search-field button:hover {
+  background-color: var(--secondary-color-light); 
+  border: 2px solid var(--accent-color);
+}
+
+.result{
+  display: flex;
+}
+
+
+
 /* --------------------------------------- */
 /* Media query for screens up to 480px (typical for phones) */
 /* ----Styling the Welcome page */
