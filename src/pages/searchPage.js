@@ -1,5 +1,7 @@
 import { createSearchElement } from '../views/searchView.js';
-import { data } from './data.js';
+import { justTry } from '../../src/data.js';
+import { createResultElement } from '../views/resultView.js';
+
 const USER_INTERFACE_ID = 'user-interface';
 
 export const initSearchPage = () => {
@@ -8,4 +10,9 @@ export const initSearchPage = () => {
 
   const searchElement = createSearchElement();
   userInterface.appendChild(searchElement);
+  const searchButton = document.getElementById('search-btn');
+
+  searchButton.addEventListener('click', () => {
+    createResultElement(justTry);
+  });
 };

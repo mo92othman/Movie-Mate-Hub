@@ -1,4 +1,4 @@
-export const data = {
+export const justTry = {
   Actors: 'Rico Verhoeven, Frank Grillo, Marie Dompnier',
   Awards: 'N/A',
   BoxOffice: 'N/A',

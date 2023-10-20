@@ -137,6 +137,7 @@ video {
   background-color: var(--secondary-color-light);
   border-radius: 20px;
   padding: 10px 20px;
+  margin-right: 10px;
 }
 .search-placeholder input {
   width: 90%;
@@ -167,6 +168,10 @@ video {
 .search-field button:hover {
   background-color: var(--secondary-color-light); 
   border: 2px solid var(--accent-color);
+}
+
+.result{
+  display: flex;
 }
 
 
