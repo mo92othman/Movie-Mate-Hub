@@ -1,6 +1,7 @@
 import { createSearchElement } from '../views/searchView.js';
 import { justTry } from '../../src/data.js';
 import { createResultElement } from '../views/resultView.js';
+// import { fetchData } from '../../src/fetch.js';
 
 const USER_INTERFACE_ID = 'user-interface';
 
