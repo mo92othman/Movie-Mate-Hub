@@ -28,6 +28,7 @@ export const createSearchElement = () => {
       </div>
       <!-- Search Button -->
       <button id="search-btn">Search</button>
+      <button id="browse-btn">browse</button>
     </div>
     <div id="result" class="result"></div>
   </div>

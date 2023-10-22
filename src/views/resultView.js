@@ -35,6 +35,31 @@ export const createResultElement = (data) => {
 </div>
   `;
 };
+export const createBrowseElement = (data) => {
+  const browseResult = document.getElementById('result');
+  browseResult.innerHTML = '';
+
+  const movieGrid = document.createElement('div');
+  movieGrid.id = 'movie-grid';
+  movieGrid.classList.add('movie-grid');
+
+  // Loop through the array of movies and create poster elements
+  data.results.forEach((movie) => {
+    if (movie.poster_path) {
+      const poster = document.createElement('img');
+      poster.src = movie.poster_path;
+      poster.alt = movie.title;
+
+      const posterContainer = document.createElement('div');
+      posterContainer.classList.add('poster-container');
+      posterContainer.appendChild(poster);
+
+      movieGrid.appendChild(posterContainer);
+    }
+  });
+
+  browseResult.appendChild(movieGrid);
+};
 
 export const createErrorElement = () => {
   const searchResult = document.getElementById('result');
