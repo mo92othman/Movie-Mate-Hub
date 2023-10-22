@@ -63,7 +63,7 @@ export const createBrowseElement = (data) => {
 
 export const createErrorElement = () => {
   const searchResult = document.getElementById('result');
-  searchResult.innerHTML = ''; // Clear any previous content
+  searchResult.innerHTML = '';
   const errorMessage = document.createElement('h1');
   errorMessage.textContent = 'Something went wrong.';
   searchResult.appendChild(errorMessage);

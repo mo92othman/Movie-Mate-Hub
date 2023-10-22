@@ -1,5 +1,5 @@
 import { createSearchElement } from '../views/searchView.js';
-import { browseArray } from '../../src/data.js';
+// import { browseArray } from '../../src/data.js';
 import { createResultElement } from '../views/resultView.js';
 import { createBrowseElement } from '../views/resultView.js';
 import { createErrorElement } from '../views/resultView.js';
@@ -27,8 +27,19 @@ export const initSearchPage = () => {
     }
   });
 
-  const browseButton = document.getElementById('browse-btn');
-  browseButton.addEventListener('click', () => {
-    createBrowseElement(browseArray);
+  // Attach an event listener to the select element
+  const genreSelect = document.getElementById('genre-select');
+  genreSelect.addEventListener('change', () => {
+    const selectedGenre = genreSelect.value;
+    console.log(selectedGenre);
+    if (selectedGenre) {
+      browse(selectedGenre)
+        .then((data) => {
+          createBrowseElement(data);
+        })
+        .catch((error) => {
+          createErrorElement();
+        });
+    }
   });
 };

@@ -145,6 +145,7 @@ video {
   color: white;
   border: none;
   background-color: transparent;
+  outline: none;
 }
 .search-placeholder input::placeholder {
   color: white;
@@ -153,7 +154,8 @@ video {
   height: 5%;
   width: 5%;
 }
-.search-field button {
+.search-field button,
+.search-field select {
   flex: 1;
   font-weight: bold;
   border: none;
@@ -170,7 +172,7 @@ video {
   border: 2px solid var(--accent-color);
 }
 
-.result{
+.result {
   display: flex;
   justify-content: center;
   background-color: #00333350;
@@ -232,7 +234,7 @@ video {
     flex-direction: column;
   }
 
-  
+
   .movie-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
