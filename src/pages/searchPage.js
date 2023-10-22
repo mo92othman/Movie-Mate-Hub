@@ -1,7 +1,8 @@
 import { createSearchElement } from '../views/searchView.js';
-import { justTry } from '../../src/data.js';
+// import { justTry } from '../../src/data.js';
 import { createResultElement } from '../views/resultView.js';
-// import { fetchData } from '../../src/fetch.js';
+import { createErrorElement } from '../views/resultView.js';
+import { fetchData } from '../../src/fetchApi.js';
 
 const USER_INTERFACE_ID = 'user-interface';
 
@@ -12,8 +13,15 @@ export const initSearchPage = () => {
   const searchElement = createSearchElement();
   userInterface.appendChild(searchElement);
   const searchButton = document.getElementById('search-btn');
+  const inputElement = document.getElementById('input');
 
-  searchButton.addEventListener('click', () => {
-    createResultElement(justTry);
+  searchButton.addEventListener('click', async () => {
+    const movieTitle = inputElement.value;
+    try {
+      const movieData = await fetchData(movieTitle);
+      createResultElement(movieData);
+    } catch (error) {
+      createErrorElement();
+    }
   });
 };

@@ -35,3 +35,11 @@ export const createResultElement = (data) => {
 </div>
   `;
 };
+
+export const createErrorElement = () => {
+  const searchResult = document.getElementById('result');
+  searchResult.innerHTML = ''; // Clear any previous content
+  const errorMessage = document.createElement('h1');
+  errorMessage.textContent = 'Something went wrong.';
+  searchResult.appendChild(errorMessage);
+};
