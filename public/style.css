@@ -145,6 +145,7 @@ video {
   color: white;
   border: none;
   background-color: transparent;
+  outline: none;
 }
 .search-placeholder input::placeholder {
   color: white;
@@ -153,7 +154,8 @@ video {
   height: 5%;
   width: 5%;
 }
-.search-field button {
+.search-field button,
+.search-field select {
   flex: 1;
   font-weight: bold;
   border: none;
@@ -170,7 +172,7 @@ video {
   border: 2px solid var(--accent-color);
 }
 
-.result{
+.result {
   display: flex;
   justify-content: center;
   background-color: #00333350;
@@ -205,6 +207,24 @@ video {
   margin-left: 10px;
  }
  
+ /* Styling the browse result */
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+/* Style for each poster image */
+.poster-container img {
+  max-width: 100%; /* Make the image responsive and fit its container */
+  height: auto;
+  border-radius: 20px;
+}
+
+
+
+
+
 
 /* --------------------------------------- */
 /* Media query for screens up to 480px (typical for phones) */
@@ -212,6 +232,11 @@ video {
 @media (max-width: 480px) {
   .flex-item {
     flex-direction: column;
+  }
+
+
+  .movie-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   }
   
 }
