@@ -18,8 +18,9 @@ body {
   background: var(--primary-gradient);
   align-items: center;
 }
-/* Styling the Welcome page */
 
+
+/* Styling the Welcome page */
 .flex-container {
   display: flex;
   justify-content: center;
@@ -46,12 +47,12 @@ video {
 }
 
 .flex-item {
+  display: flex;
   position: absolute;
   top: 50%; 
   left: 50%; 
   transform: translate(-50%, -50%); 
   z-index: 1; /* Bring it to the front */
-  display: flex;
   align-items: center;
   justify-content: space-around;
   background: var(--primary-gradient);
@@ -60,9 +61,10 @@ video {
 }
 
 .flex-item img {
-  width: 500px;
-  padding: 25px 0;
-  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  width: 30vw;
+  height: auto;
+  padding: 38px 0;
+  box-shadow: 20px -0px 20px rgba(0, 0, 0, 0.4);
 }
 
 .text-container {
@@ -71,12 +73,15 @@ video {
   width: 100%; 
   padding: 40px;
   color: white;
+  border-left: 3px solid var(--accent-color);
 }
+
 .text-container h1, .text-container p, .text-container button {
   margin-bottom: 20px;
 }
-.text-container button{
-  font-size: 1vw;
+
+.text-container button {
+  font-size: 1rem;
   width: 100%; 
   padding: 10px;
   border:none;
@@ -90,8 +95,10 @@ video {
   background-color: var(--secondary-color-light); 
 }
 
-
+/* -------------------------------- */
 /* Styling the Search page */
+
+/* ---------- Header */
 
 .header {
   display: flex;
@@ -100,16 +107,19 @@ video {
   color: white;
   background-color: var(--primary-color);
 }
+
 .header-logo {
   margin-left: 50px;
   width: 10vw;
 }
+
 .log-in-container {
   width: 400px;
   height: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  font-size: 0.8rem;
   margin-right: 50px;
 }
 
@@ -123,13 +133,16 @@ video {
   padding: 10px 20px;
   background-color: var(--accent-color);
 }
+
+/* -------- Search filed tools */
 .search-field{
   display: flex;
-  margin: 15px auto; /* Center the element horizontally */
+  margin: 15px auto; 
   justify-content: space-between;
   align-items: center;
   width: 50%;
 }
+
 .search-placeholder {
   display: flex;
   flex: 2;
@@ -139,6 +152,7 @@ video {
   padding: 10px 20px;
   margin-right: 10px;
 }
+
 .search-placeholder input {
   width: 90%;
   font-weight: bold;
@@ -147,13 +161,17 @@ video {
   background-color: transparent;
   outline: none;
 }
+
 .search-placeholder input::placeholder {
   color: white;
 }
+
 .search-placeholder img {
-  height: 5%;
-  width: 5%;
+  margin-left: 10px;
+  width: 1.5vw;
+  height: 1.5vw;
 }
+
 .search-field button,
 .search-field select {
   flex: 1;
@@ -172,6 +190,7 @@ video {
   border: 2px solid var(--accent-color);
 }
 
+/* -------- Result(movie title search or browsing)  */
 .result {
   display: flex;
   justify-content: center;
@@ -181,33 +200,38 @@ video {
   padding: 30px 100px;
 }
 
- .info {
+.info {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   width: 30%;
   margin-right: 00px;
- }
- .rating {
+}
+
+.rating {
   display: flex;
   align-items: center;
   margin-bottom: 10px;
- }
- .rating img {
+}
+
+.rating img {
   margin-right: 10px;
   max-width: 25px;
- }
- .info-1 p {
+}
+
+.info-1 p {
   margin-bottom: 10px; 
 }
- strong {
-  color: var(--accent-color);
- }
- .poster{
+
+strong {
+ color: var(--accent-color);
+}
+
+.poster {
   margin-left: 10px;
- }
+}
  
- /* Styling the browse result */
+ /* --------- Styling the browse result */
 .movie-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -216,24 +240,88 @@ video {
 
 /* Style for each poster image */
 .poster-container img {
-  max-width: 100%; /* Make the image responsive and fit its container */
+  max-width: 100%; 
   height: auto;
   border-radius: 20px;
 }
 
 
-
-
-
-
 /* --------------------------------------- */
-/* Media query for screens up to 480px (typical for phones) */
+/* Media query for screens up to 780px */
+
 /* ----Styling the Welcome page */
-@media (max-width: 480px) {
+@media (max-width: 780px) {
   .flex-item {
     flex-direction: column;
+    width: 400px;
+    padding: 20px;
+  }
+  .flex-item img {
+    max-width: 50vw;
+    width: 300px;
+    box-shadow: none;
+  }
+  .text-container button{
+    margin: 0 auto;
+    font-size: 1rem;
+    width: 50%;
+  }
+  .text-container {
+    text-align: center;
+    border-left: none;
+    width: 80%;
+    padding: 15px;
+    border-top: 3px solid var(--accent-color);
   }
 
+  /* ----Styling the header */
+  .header {
+    flex-direction: column;
+  }
+  .header-logo {
+    margin: 0;
+    width: 20vw;
+    height: auto;
+  }
+  .log-in-container {
+    width: 60%;
+    padding: 5px 10px;
+    margin: 0;
+    height: auto;
+    border-bottom: 2px solid var(--accent-color);
+  }
+  .log-in-container button {
+    border-radius: 10px;
+    padding: 5px 10px;
+  }
+
+  /* -------- Search filed tools */
+  .search-field {
+    justify-content: space-between;
+    width: 80%;
+  }
+  .search-placeholder img {
+    width: 2.5vw;
+    height: 2.5vw;
+  }
+  
+  
+  /* -------- Result(movie title search or browsing)  */
+  .result {
+    flex-direction: column;
+    align-items: center;
+    margin: 10px auto;
+    padding: 30px 50px;
+  }
+  .info {
+    width: 80%;
+    margin-bottom: 20px;
+   }
+   .poster {
+    margin: 0 auto;
+    border-radius: 50px;
+  }
+  /* ----Styling the browsing movies grid */
 
   .movie-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
