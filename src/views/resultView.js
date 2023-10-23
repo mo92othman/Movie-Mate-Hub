@@ -2,8 +2,6 @@ export const createResultElement = (data) => {
   const searchResult = document.getElementById('result');
   searchResult.innerHTML = '';
 
-  // const error = 'No data available';
-
   searchResult.innerHTML = `
   <div class='info'>
   <h1 style="text-transform: uppercase;">${data.Title ? data.Title : error}</h1>
