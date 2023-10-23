@@ -1,7 +1,7 @@
 // function to fetch an api that gives details about one movie:
 async function fetchData(movieTitle) {
   const apiKey = 'e8318a99';
-  const apiUrl = `http://www.omdbapi.com/?apikey=${apiKey}&t=${encodeURIComponent(
+  const apiUrl = `https://www.omdbapi.com/?apikey=${apiKey}&t=${encodeURIComponent(
     movieTitle,
   )}`;
 
