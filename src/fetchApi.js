@@ -1,24 +1,20 @@
-// fetch.js
-
+// function to fetch an api that gives details about one movie:
 async function fetchData(movieTitle) {
   const apiKey = 'e8318a99';
   const apiUrl = `http://www.omdbapi.com/?apikey=${apiKey}&t=${encodeURIComponent(
     movieTitle,
   )}`;
 
-  try {
-    const response = await fetch(apiUrl);
+  const response = await fetch(apiUrl);
+  if (response.ok) {
     const result = await response.json();
+    console.log(result);
     return result;
-  } catch (error) {
-    console.error(error);
-    throw error; // Re-throw the error for proper error handling in the calling code.
   }
 }
-
 export { fetchData };
 
-// function to fetch a differnt api that resolve to list of movies by genre
+// function to fetch a different api that resolve to list of movies by genre
 async function browse(genre) {
   const apiKey = 'a86d34ec56msh6f28cf67036c0cep17bf3cjsnf0a4e8eb36c1';
   const apiHost = 'advanced-movie-search.p.rapidapi.com';
@@ -34,15 +30,10 @@ async function browse(genre) {
     },
   };
 
-  try {
-    const response = await fetch(url, options);
+  const response = await fetch(url, options);
+  if (response.ok) {
     const result = await response.json();
-    console.log(result);
-    return result; // Return the fetched data
-  } catch (error) {
-    console.error(error);
-    throw error; // Re-throw the error for proper error handling in the calling code.
+    return result;
   }
 }
-
 export { browse };

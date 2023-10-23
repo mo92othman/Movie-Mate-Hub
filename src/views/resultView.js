@@ -1,3 +1,4 @@
+// Create the result view with movie details(search by movie title).
 export const createResultElement = (data) => {
   const searchResult = document.getElementById('result');
   searchResult.innerHTML = '';
@@ -33,6 +34,8 @@ export const createResultElement = (data) => {
 </div>
   `;
 };
+
+// Create a list of movies (browse by genre).
 export const createBrowseElement = (data) => {
   const browseResult = document.getElementById('result');
   browseResult.innerHTML = '';
@@ -51,7 +54,6 @@ export const createBrowseElement = (data) => {
       const posterContainer = document.createElement('div');
       posterContainer.classList.add('poster-container');
       posterContainer.appendChild(poster);
-
       movieGrid.appendChild(posterContainer);
     }
   });
@@ -59,10 +61,11 @@ export const createBrowseElement = (data) => {
   browseResult.appendChild(movieGrid);
 };
 
+// Create an error element.
 export const createErrorElement = () => {
   const searchResult = document.getElementById('result');
   searchResult.innerHTML = '';
   const errorMessage = document.createElement('h1');
-  errorMessage.textContent = 'Something went wrong.';
+  errorMessage.textContent = 'Something went wrong!';
   searchResult.appendChild(errorMessage);
 };
