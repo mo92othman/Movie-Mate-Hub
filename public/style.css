@@ -243,6 +243,12 @@ strong {
   max-width: 100%; 
   height: auto;
   border-radius: 20px;
+  transition: transform 0.3s, opacity 0.3s;
+  cursor: pointer;
+}
+.poster-container img:hover {
+  transform: scale(1.06); 
+  opacity: 0.7; 
 }
 
 

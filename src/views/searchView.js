@@ -52,7 +52,7 @@ export const createSearchElement = () => {
       </select>
 
     </div>
-    <div id="result" class="result"></div>
+    <div id="result" class="result"></div> 
   </div>
   `;
   return element;
