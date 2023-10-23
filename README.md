@@ -10,8 +10,8 @@ Movie Mate Hub is a web application for movie enthusiasts. Interacts with an `AP
 
 ## color palette
 
-![colors](assets\colors.png)  
-![Screenshot 2](assets\laptop.png)
+![colors](https://github.com/mo92othman/Movie-Mate-Hub/assets/128217517/99ba6898-7889-46e5-99c5-5992096fb74b) 
+![laptop](https://github.com/mo92othman/Movie-Mate-Hub/assets/128217517/de1bb2ed-ed3b-40b0-9553-118fea8cbd0b)
 
 ## Project Requirements
 
