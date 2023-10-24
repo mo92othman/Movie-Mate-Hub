@@ -6,7 +6,6 @@ async function fetchData(movieTitle) {
   const response = await fetch(apiUrl);
   if (response.ok) {
     const result = await response.json();
-    console.log(result);
     return result;
   }
 }

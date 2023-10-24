@@ -22,16 +22,34 @@ export const initSearchPage = () => {
   // Get the search button and input elements(Search by title feature)
   const searchButton = document.getElementById('search-btn');
   const inputElement = document.getElementById('input');
-  // Attach a click event listener to the search button
-  searchButton.addEventListener('click', async () => {
+  const resultElement = document.getElementById('result');
+
+  // Function to handle the fetch
+  const performSearch = async () => {
     const movieTitle = inputElement.value;
-    try {
-      // Fetch movie data based on the user's input
-      const movieData = await fetchData(movieTitle);
-      // Create and display the result element
-      createResultElement(movieData);
-    } catch (error) {
-      createErrorElement();
+    if (movieTitle.trim() === '') {
+      // Show a message to the user
+      resultElement.innerHTML =
+        '<h2>Please enter a movie name before searching.</h2>';
+    } else {
+      try {
+        // Fetch movie data based on the user's input
+        const movieData = await fetchData(movieTitle);
+        // Create and display the result element
+        createResultElement(movieData);
+      } catch (error) {
+        createErrorElement();
+      }
+    }
+  };
+
+  // Attach a click event listener to the search button
+  searchButton.addEventListener('click', performSearch);
+
+  // Attach a keydown event listener to the input field
+  inputElement.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+      performSearch();
     }
   });
 
