@@ -2,9 +2,11 @@
 import { createSearchElement } from '../views/searchView.js';
 import { createResultElement } from '../views/resultView.js';
 import { createBrowseElement } from '../views/resultView.js';
+import { createFavoriteElement } from '../views/resultView.js';
 import { createErrorElement } from '../views/resultView.js';
 import { fetchData } from '../../src/fetchApi.js';
 import { browse } from '../../src/fetchApi.js';
+import { favoriteArray } from '../../src/data.js';
 
 const USER_INTERFACE_ID = 'user-interface';
 
@@ -52,7 +54,6 @@ export const initSearchPage = () => {
 
   // Change theme button function:
   const changeThemeButton = document.getElementById('change-theme');
-
   const body = document.body;
   let isDarkTheme = true;
 
@@ -70,6 +71,31 @@ export const initSearchPage = () => {
       logoIcon.src = 'assets/logo (2).svg';
       userIcon.src = 'assets/icons/user-dark.png';
       searchIcon.src = 'assets/icons/search-dark.png';
+    }
+  });
+
+  const favoriteButton = document.getElementById('favorite-btn');
+  let isFavoriteView = false;
+
+  favoriteButton.addEventListener('click', () => {
+    // Toggle between favorite and result views
+    isFavoriteView = !isFavoriteView;
+
+    // Call the createFavoriteElement function and pass the favorite array as an argument
+    createFavoriteElement(favoriteArray);
+
+    // Modify the display style based on the isFavoriteView flag
+    const favoriteContainer = document.getElementById('favorite');
+    const resultContainer = document.getElementById('result');
+
+    if (isFavoriteView) {
+      favoriteContainer.style.display = 'block';
+      resultContainer.style.display = 'none';
+      favoriteButton.style.backgroundColor = '#00cc66';
+    } else {
+      favoriteContainer.style.display = 'none';
+      resultContainer.style.display = 'flex';
+      favoriteButton.style.backgroundColor = '';
     }
   });
 };

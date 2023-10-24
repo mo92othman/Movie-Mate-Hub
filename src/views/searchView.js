@@ -50,9 +50,10 @@ export const createSearchElement = () => {
         <option value="10752">War</option>
         <option value="37">Western</option>
       </select>
-
+      <button id="favorite-btn">Favorite</button>
     </div>
     <div id="result" class="result"></div> 
+    <div id="favorite" class="favorite"></div> 
   </div>
   `;
   return element;
