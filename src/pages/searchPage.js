@@ -49,4 +49,27 @@ export const initSearchPage = () => {
         });
     }
   });
+
+  // Change theme button function:
+  const changeThemeButton = document.getElementById('change-theme');
+
+  const body = document.body;
+  let isDarkTheme = true;
+
+  changeThemeButton.addEventListener('click', () => {
+    body.classList.toggle('dark-theme');
+    const logoIcon = document.getElementById('logo-icon');
+    const userIcon = document.getElementById('user-icon');
+    const searchIcon = document.getElementById('search-icon');
+    isDarkTheme = !isDarkTheme;
+    if (isDarkTheme) {
+      logoIcon.src = 'assets/logo (3).svg';
+      userIcon.src = 'assets/icons/user.png';
+      searchIcon.src = 'assets/icons/search.png';
+    } else {
+      logoIcon.src = 'assets/logo (2).svg';
+      userIcon.src = 'assets/icons/user-dark.png';
+      searchIcon.src = 'assets/icons/search-dark.png';
+    }
+  });
 };
