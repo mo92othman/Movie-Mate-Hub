@@ -6,8 +6,18 @@
   --secondary-gradient: linear-gradient(90deg, #0066ff, #0099cc);
   --primary-gradient: linear-gradient(90deg, #1b111f, #003333);
   --primary-gradient-opacity: linear-gradient(90deg, #1b111f80, #00333380);
+  --white: #ffffff; 
 }
-
+.dark-theme {
+  --primary-color: #b8e6bb;
+  --secondary-color: #c6c6c6;
+  --secondary-color-light: #e3e3e3;
+  --accent-color:  #008442;
+  --secondary-gradient: linear-gradient(90deg, #0066ff, #0099cc);
+  --primary-gradient: #ffffff;
+  --primary-gradient-opacity: linear-gradient(90deg, #1b111f4a, #0033334d);
+  --white: #070412;
+}
 * {
   margin: 0;
   padding: 0;
@@ -72,7 +82,7 @@ video {
   flex-direction: column;
   width: 100%; 
   padding: 40px;
-  color: white;
+  color: var(--white);
   border-left: 3px solid var(--accent-color);
 }
 
@@ -85,7 +95,7 @@ video {
   width: 100%; 
   padding: 10px;
   border:none;
-  color: white;
+  color: var(--white);
   border-radius: 10px;
   background-color: var(--secondary-color);
   transition: background-color 0.3s;
@@ -104,7 +114,7 @@ video {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  color: var(--white);
   background-color: var(--primary-color);
 }
 
@@ -129,8 +139,10 @@ video {
 
 .log-in-container button {
   font-weight: bold;
+  border: var(--secondary-color-light);
   border-radius: 5px;
   padding: 10px 20px;
+  color: var(--primary-color);
   background-color: var(--accent-color);
 }
 
@@ -156,14 +168,14 @@ video {
 .search-placeholder input {
   width: 90%;
   font-weight: bold;
-  color: white;
+  color: var(--white);
   border: none;
   background-color: transparent;
   outline: none;
 }
 
 .search-placeholder input::placeholder {
-  color: white;
+  color: var(--white);
 }
 
 .search-placeholder img {
@@ -176,11 +188,11 @@ video {
 .search-field select {
   flex: 1;
   font-weight: bold;
-  border: none;
+  border: 2px solid transparent;
   border-radius: 5px;
   padding: 10px 0;
   margin-left: 1vw;
-  color: white;
+  color: var(--white);
   background-color: var(--secondary-color);
   transition: background-color 0.3s;
 }
@@ -194,8 +206,8 @@ video {
 .result {
   display: flex;
   justify-content: center;
-  background-color: #00333350;
-  color: white;
+  background-color: #00333340;
+  color: var(--white);
   margin: 30px auto;
   padding: 30px 100px;
 }
