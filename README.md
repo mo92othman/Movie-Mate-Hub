@@ -60,7 +60,6 @@ Movie-Mate-Hub
 │   ├── pages
 │   └── views
 │   ├── app.js
-│   ├── constants.js
 │   ├── data.js
 ├── index.html
 ``````
