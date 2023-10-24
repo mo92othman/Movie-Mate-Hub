@@ -241,6 +241,26 @@ strong {
 
 .poster {
   margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 30px;
+}
+
+.poster button {
+  color: var(--primary-color);
+  background-color: var(--accent-color);
+  border: none;
+  width: 50%;
+  margin-top: 5px;
+  border-radius: 5px;
+  
+  transition: transform 0.3s;
+}
+.poster button:hover {
+  cursor: pointer;
+  transform: scale(1.2); /* Increase the size by 10% on hover */
 }
  
  /* --------- Styling the browse result */
@@ -263,6 +283,45 @@ strong {
   opacity: 0.7; 
 }
 
+
+/* Style Favorite list */
+.favorite {
+  color: var(--white);
+  display: flex;
+  margin: 10px auto;
+  padding: 20px 50px;
+  width: 60%;
+  max-height: 10vh;
+}
+
+.favorite h1 {
+  margin: 30px auto;
+  text-align: center;
+}
+
+.empty-folder {
+  max-width: 150px;
+  height: auto;
+  display: block;
+  margin: 80px auto;
+}
+
+.favorite-movie {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px auto;
+  font-size: 1rem;
+  padding: 10px 0;
+  padding-bottom: 15px;
+  border-bottom: 3px solid var(--accent-color);
+  max-height: 10vh;
+}
+
+.favorite-movie img {
+  max-width: 60px;
+  border-radius: 10px;
+}
 
 /* --------------------------------------- */
 /* Media query for screens up to 780px */
